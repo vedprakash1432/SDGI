@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish login page</title>
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" style="display: none;">
+        <Center><b class="title label">Login</b></Center>
+        <form action="" id="login-form">
+            <div class="user-details">
+                <div class="input-box">
+                    <input type="text" name="username" id="username" class="input-field" placeholder="UserName">
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" id="password" class="input-field" placeholder="Password">
+                </div>
+                <div class="input-box">
+                    <input type="checkbox" class="label" name="rememberMe" checked id="remember"><b>Remember Me</b>
+                </div>
+                <div class="button">
+                    <input type="button"  value="Login Now">
+                </div>
+            </div>
+            <div class="footer">
+             <center><span><b class="label">OR</b></span></center>
+             <div class="social-media-icons">
+                <i class="fab fa-google-plus"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-pinterest"></i>
+             </div>
+             <p style="justify-content: center;"><b>Forget Password? /<span id="toggle" onclick="changeMode();">Dark Mode</span> </b></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var rootProp = document.documentElement.style;
+        var mode = true;
+        function changeMode(){
+            if(mode){
+                darkMode();
+            }else{
+                lightMode();
+            }
+            mode = !mode;
+
+        }
+        function lightMode(){
+            rootProp.setProperty("--background1","rgba (230, 230, 230)");
+            rootProp.setProperty("--shadow1","rgba(119,119,119,0.5);");
+            rootProp.setProperty("--shadow2","rgba(255,255,255,0.85)");
+            rootProp.setProperty("--labelColor","black");
+           
+        }
+        function darkMode(){
+            rootProp.setProperty("--background1","rgb (9 25 33)");
+            rootProp.setProperty("--shadow1","rgb (0 0 0 / 42%)");
+            rootProp.setProperty("--shadow2","rgb (255 255 255 /12%)");
+            rootProp.setProperty("--labelColor","rgb (255 255 255 /59%)");
+
+        }
+    </script>
+</body>
+</html>
